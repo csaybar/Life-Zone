@@ -220,7 +220,7 @@ END IF
 !!
   program test
   use holdridge_calc
-  integer,parameter::n=2536500,nx=3
+  integer,parameter::n=106800,nx=3
   real(kind=dp),dimension(n,nx)::test_input
   real(kind=dp)::R,BT,LAT,PE
   character(len=20)::Zone,VI
