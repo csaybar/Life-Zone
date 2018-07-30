@@ -33,6 +33,7 @@ lifezone<-function(HLZ_f95="~/.",PP,BioT,Etp,output="~/."){
   write.table(df,sprintf("%s/test_input.txt",output),row.names = F,sep = ",")
   latin = readLines(HLZ_f95)
   latin[223]<-sprintf("  integer,parameter::n=%d,nx=3",nrow(df))
+  writeLines(latin,con=HLZ_f95)
   system(sprintf("gfortran -o %s/life.exe %s",output,HLZ_f95))
   system(sprintf("cd %s ;./life.exe", output))
   
